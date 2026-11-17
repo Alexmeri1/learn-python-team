@@ -229,3 +229,9 @@ flake8 ./src --statistics --show-source --count
 ## Author
 
 - [@trekhleb](https://trekhleb.dev)
+
+## COMP 354 - Team Collaboration
+
+This repository is maintained by our COMP 354 team as part of Assignment 4.
+
+We use Git and GitHub to practice branching, pull requests, code reviews, and merge conflict resolution.
