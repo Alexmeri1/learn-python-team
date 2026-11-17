@@ -45,3 +45,22 @@ def test_nested_if_statement():
     assert conclusion == 'Positive even number'
 
 
+def test_multiple_elif_branches():
+    """Multiple ELIF branches"""
+
+    score = 76
+    grade = ''
+
+    if score >= 90:
+        grade = 'A'
+    elif score >= 80:
+        grade = 'B'
+    elif score >= 70:
+        grade = 'C'
+    elif score >= 60:
+        grade = 'D'
+    else:
+        grade = 'F'
+
+    assert grade == 'C'
+
