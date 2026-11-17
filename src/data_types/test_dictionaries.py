@@ -77,3 +77,21 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+
+def test_dictionary_update():
+    """Update an existing entry and add a new entry."""
+
+    fruits_dictionary = {
+        'apple': 'green',
+        'banana': 'yellow',
+    }
+
+    # update() replaces values for existing keys and adds keys that are missing.
+    fruits_dictionary.update({'apple': 'red', 'cherry': 'red'})
+
+    assert fruits_dictionary == {
+        'apple': 'red',
+        'banana': 'yellow',
+        'cherry': 'red',
+    }
