@@ -336,3 +336,13 @@ def test_nested_list_comprehensions():
         (3, 7, 11),
         (4, 8, 12),
     ]
+
+def test_list_sort_descending():
+    """Demonstrate sorting a list in descending order."""
+
+    numbers = [12, 5, 20, 8, 5]
+
+    # Sort numbers from highest to lowest.
+    numbers.sort(reverse=True)
+
+    assert numbers == [20, 12, 8, 5, 5]
