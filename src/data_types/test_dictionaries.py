@@ -95,3 +95,19 @@ def test_dictionary_update():
         'banana': 'yellow',
         'cherry': 'red',
     }
+
+
+def test_dictionary_pop():
+    """Retrieve and remove a dictionary entry."""
+
+    fruits_dictionary = {
+        'apple': 'green',
+        'banana': 'yellow',
+    }
+
+    # pop() returns the value associated with a key and removes that entry.
+    removed_color = fruits_dictionary.pop('apple')
+
+    assert removed_color == 'green'
+    assert 'apple' not in fruits_dictionary
+    assert fruits_dictionary == {'banana': 'yellow'}
