@@ -46,9 +46,10 @@ def test_list_type():
 
     # You can also add new items at the end of the list, by using
     # the append() method
-    cubes.append(216)  # add the cube of 6
-    cubes.append(7 ** 3)  # and the cube of 7
-    assert cubes == [1, 8, 27, 64, 125, 216, 343]
+    cubes.append(216)
+    cubes.append(7 ** 3)
+    cubes.extend([9 ** 3])  # add the cube of 9
+    assert cubes == [1, 8, 27, 64, 125, 216, 343, 729]
 
     # Assignment to slices is also possible, and this can even change the size
     # of the list or clear it entirely:
