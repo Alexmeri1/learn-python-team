@@ -346,3 +346,16 @@ def test_list_sort_descending():
     numbers.sort(reverse=True)
 
     assert numbers == [20, 12, 8, 5, 5]
+
+
+def test_list_filter_even_numbers():
+    """Demonstrate filtering even numbers using list comprehension."""
+
+    numbers = [3, 8, 12, 7, 15, 20, 6]
+
+    # Keep only numbers divisible by 2.
+    even_numbers = [number for number in numbers if number % 2 == 0]
+
+    assert even_numbers == [8, 12, 20, 6]
+
+    
