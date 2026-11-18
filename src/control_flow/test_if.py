@@ -22,6 +22,8 @@ def test_if_statement():
         conclusion = 'Number equals to zero'
     elif number < 1:
         conclusion = 'Number is greater than zero but less than one'
+    elif number < 10:
+        conclusion = 'Number is less than ten'
     elif number < 100:
         conclusion = 'Number is less than one hundred'
     else:
