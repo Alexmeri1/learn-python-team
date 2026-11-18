@@ -339,3 +339,23 @@ def test_nested_list_comprehensions():
         (3, 7, 11),
         (4, 8, 12),
     ]
+def test_list_sort_descending():
+    """Demonstrate sorting a list in descending order."""
+
+    numbers = [12, 5, 20, 8, 5]
+
+    # Sort numbers from highest to lowest.
+    numbers.sort(reverse=True)
+
+    assert numbers == [20, 12, 8, 5, 5]
+
+
+def test_list_filter_even_numbers():
+    """Demonstrate filtering even numbers using list comprehension."""
+
+    numbers = [3, 8, 12, 7, 15, 20, 6]
+
+    # Keep only numbers divisible by 2.
+    even_numbers = [number for number in numbers if number % 2 == 0]
+
+    assert even_numbers == [8, 12, 20, 6]
