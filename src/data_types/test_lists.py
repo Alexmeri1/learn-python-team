@@ -46,9 +46,12 @@ def test_list_type():
 
     # You can also add new items at the end of the list, by using
     # the append() method
+
     cubes.append(216)  # add the cube of 6
-    cubes.append(7 ** 3)  # and the cube of 7
-    assert cubes == [1, 8, 27, 64, 125, 216, 343]
+    cubes.append(7 ** 3)  # add the cube of 7
+    cubes.append(8 ** 3)  # Omar's cube of 8
+    cubes.extend([9 ** 3])  # Farhan's cube of 9
+    assert cubes == [1, 8, 27, 64, 125, 216, 343, 512, 729]
 
     # Assignment to slices is also possible, and this can even change the size
     # of the list or clear it entirely:
@@ -336,7 +339,6 @@ def test_nested_list_comprehensions():
         (3, 7, 11),
         (4, 8, 12),
     ]
-
 def test_list_sort_descending():
     """Demonstrate sorting a list in descending order."""
 
@@ -357,5 +359,3 @@ def test_list_filter_even_numbers():
     even_numbers = [number for number in numbers if number % 2 == 0]
 
     assert even_numbers == [8, 12, 20, 6]
-
-    
