@@ -121,3 +121,20 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+
+def test_function_default_parameters():
+    """Function with a default parameter value.
+
+    A parameter can be given a default value in the function definition. If the caller leaves
+    that argument out, the default value is used instead.
+    """
+
+    def power(base, exponent=2):
+        return base ** exponent
+
+    # The exponent is left out, so the default value 2 is used: 3 ** 2.
+    assert power(3) == 9
+
+    # The exponent is passed, so it replaces the default: 2 ** 3.
+    assert power(2, 3) == 8
