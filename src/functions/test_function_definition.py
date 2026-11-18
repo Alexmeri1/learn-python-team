@@ -138,3 +138,23 @@ def test_function_default_parameters():
 
     # The exponent is passed, so it replaces the default: 2 ** 3.
     assert power(2, 3) == 8
+
+
+def test_function_input_validation():
+    """Function that checks its input before using it.
+
+    A function can validate its arguments first and return early when the input is not usable.
+    """
+
+    def average(numbers):
+        # An empty list has no average, so return None instead of dividing by zero.
+        if not numbers:
+            return None
+
+        return sum(numbers) / len(numbers)
+
+    # A valid list returns its average: (2 + 4 + 6) / 3.
+    assert average([2, 4, 6]) == 4
+
+    # An empty list is rejected by the check and returns None.
+    assert average([]) is None
