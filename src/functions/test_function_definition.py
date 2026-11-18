@@ -121,3 +121,40 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+
+def test_function_default_parameters():
+    """Function with a default parameter value.
+
+    A parameter can be given a default value in the function definition. If the caller leaves
+    that argument out, the default value is used instead.
+    """
+
+    def power(base, exponent=2):
+        return base ** exponent
+
+    # The exponent is left out, so the default value 2 is used: 3 ** 2.
+    assert power(3) == 9
+
+    # The exponent is passed, so it replaces the default: 2 ** 3.
+    assert power(2, 3) == 8
+
+
+def test_function_input_validation():
+    """Function that checks its input before using it.
+
+    A function can validate its arguments first and return early when the input is not usable.
+    """
+
+    def average(numbers):
+        # An empty list has no average, so return None instead of dividing by zero.
+        if not numbers:
+            return None
+
+        return sum(numbers) / len(numbers)
+
+    # A valid list returns its average: (2 + 4 + 6) / 3.
+    assert average([2, 4, 6]) == 4
+
+    # An empty list is rejected by the check and returns None.
+    assert average([]) is None
